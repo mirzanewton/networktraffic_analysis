@@ -1,0 +1,103 @@
+{
+  "file": "sample/sample.pcap",
+  "packets": 752,
+  "bytes": 42966,
+  "protocols": {
+    "UDP": 94,
+    "TCP": 622,
+    "ARP": 6,
+    "ICMP": 30
+  },
+  "alerts": [
+    {
+      "rule": "ARP spoofing",
+      "severity": "HIGH",
+      "src": "aa:00:00:00:00:01, de:ad:be:ef:00:66",
+      "dst": "10.0.0.1",
+      "first_seen": 1700000001.0,
+      "last_seen": 1700000054.0,
+      "detail": "IP 10.0.0.1 is claimed by 2 different MAC addresses (possible man-in-the-middle).",
+      "mitre": "T1557.002 ARP Cache Poisoning"
+    },
+    {
+      "rule": "Port scan",
+      "severity": "HIGH",
+      "src": "10.0.0.66",
+      "dst": "10.0.0.5",
+      "first_seen": 1700000010.0,
+      "last_seen": 1700000010.699999,
+      "detail": "15 distinct TCP ports probed with SYN-only packets in 0.7s.",
+      "mitre": "T1046 Network Service Discovery"
+    },
+    {
+      "rule": "SYN flood",
+      "severity": "HIGH",
+      "src": "201 sources",
+      "dst": "10.0.0.5:80",
+      "first_seen": 1700000030.0,
+      "last_seen": 1700000030.495011,
+      "detail": "100 SYN-only packets in 0.5s from 201 source address(es); likely denial-of-service (sources may be spoofed).",
+      "mitre": "T1498 Network Denial of Service"
+    },
+    {
+      "rule": "DNS tunnelling / exfiltration",
+      "severity": "HIGH",
+      "src": "10.0.0.23",
+      "dst": "evil-example.com",
+      "first_seen": 1700000040.0,
+      "last_seen": 1700000046.5,
+      "detail": "14 long or high-entropy DNS queries to evil-example.com (e.g. 2073fec8df4f50947aaeb26c57d21fa5d328263dfe574de7.t.evil-example.com).",
+      "mitre": "T1071.004 Application Layer Protocol: DNS"
+    },
+    {
+      "rule": "Host sweep",
+      "severity": "MEDIUM",
+      "src": "10.0.0.66",
+      "dst": "10 hosts",
+      "first_seen": 1700000020.0,
+      "last_seen": 1700000020.899999,
+      "detail": "ICMP echo sent to 10 distinct hosts in 0.9s (network discovery).",
+      "mitre": "T1018 Remote System Discovery"
+    },
+    {
+      "rule": "Suspicious port",
+      "severity": "MEDIUM",
+      "src": "10.0.0.23",
+      "dst": "10.0.0.50:4444",
+      "first_seen": 1700000061.0,
+      "last_seen": 1700000061.0,
+      "detail": "Connection attempt to port 4444 (Metasploit default).",
+      "mitre": "T1571 Non-Standard Port"
+    },
+    {
+      "rule": "Cleartext protocol",
+      "severity": "LOW",
+      "src": "10.0.0.66",
+      "dst": "10.0.0.5:21",
+      "first_seen": 1700000010.999999,
+      "last_seen": 1700000010.999999,
+      "detail": "FTP session attempted; credentials and data travel unencrypted.",
+      "mitre": "T1040 Network Sniffing"
+    },
+    {
+      "rule": "Cleartext protocol",
+      "severity": "LOW",
+      "src": "10.0.0.66",
+      "dst": "10.0.0.5:23",
+      "first_seen": 1700000011.099998,
+      "last_seen": 1700000011.099998,
+      "detail": "Telnet session attempted; credentials and data travel unencrypted.",
+      "mitre": "T1040 Network Sniffing"
+    },
+    {
+      "rule": "Cleartext protocol",
+      "severity": "LOW",
+      "src": "10.0.0.23",
+      "dst": "10.0.0.5:23",
+      "first_seen": 1700000060.0,
+      "last_seen": 1700000060.0,
+      "detail": "Telnet session attempted; credentials and data travel unencrypted.",
+      "mitre": "T1040 Network Sniffing"
+    }
+  ]
+}
