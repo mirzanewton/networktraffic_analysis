@@ -1,9 +1,7 @@
 # Network Traffic Analysis & Intrusion Detection
 A Python-based cybersecurity project for analysing network traffic and detecting suspicious activities.
 
-Live Demo
-
-Click here to view the live dashboard⁠￼
+**[View Live Dashboard](https://networktrafficanalysis-mxc873wjrhqugi9wbthy3w.streamlit.app)**
 
 Technologies Used
 
