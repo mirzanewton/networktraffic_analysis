@@ -1,4 +1,17 @@
 # Network Traffic Analysis & Intrusion Detection
+A Python-based cybersecurity project for analysing network traffic and detecting suspicious activities.
+
+Live Demo
+
+Click here to view the live dashboard⁠￼
+
+Technologies Used
+
+* Python
+* Streamlit
+* Pandas
+* Network Traffic Analysis
+* Intrusion Detection System
 
 A lightweight, dependency-free Python tool that reads Wireshark captures (`.pcap` and `.pcapng`),
 detects common attack patterns, and produces an incident-style report.
